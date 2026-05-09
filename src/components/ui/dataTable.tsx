@@ -1,5 +1,4 @@
 "use client";
-
 import {
     ColumnDef,
     flexRender,
@@ -17,9 +16,11 @@ import {
 } from "@/components/ui/table";
 import { ReactNode } from "react";
 import Image from "next/image";
-import { images } from "@/public/icons";
+// import NoImage from "../../../public/images/no-data.png";
 import clsx from "clsx";
 import { TableSkeleton } from "./skeleton";
+
+
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[];
@@ -99,7 +100,7 @@ function DataTable<TData, TValue>({
                                     className='h-24 text-center'
                                 >
                                     <div className='flex flex-col justify-center items-center my-10 gap-3'>
-                                        <Image src={images.noData} alt='table Data' />
+                                        {/* <Image src={NoImage} alt='table Data' /> */}
                                         <p className='text-[#18425D] font-medium'>
                                             {emptyDataMessage}
                                         </p>
